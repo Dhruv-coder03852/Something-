@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise for Butkii</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe6eb;
+      text-align: center;
+    }
+    .page {
+      display: none;
+      padding: 20px;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    video {
+      max-width: 90%;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden Audio -->
+  <audio id="bgMusic" loop>
+    <source src="https://drive.google.com/file/d/1ZRUhQHAwHhAYx8W2xBpr8oR-G_qnSgzT/view?usp=drivesdk type="audio/mpeg">
+  </audio>
+
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1>Hii Butkii ❤️</h1>
+    <button onclick="playAndGoTo2()">Next & Play</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2" class="page">
+    <h2>You're never alone ❤️</h2>
+    <p>Main hamesha tere saath hoon, har situation me... tu mera strong betu hna ❤️.. just smile kr or happy hoja .. i know tu sad h overthinking kr rhi h 🫂.. hota bhi h but ab isko band krde .. ek pyaari si smile k sath papa se baat kr or puch kya haal chal h ek dum funny or cute way me taki papa ko bhi tere chinta na ho ki meenu k sochri hosi fir unke man me bhi hosi meenu aapno kito dhyaan rakhe h jaldi sahi hoke meenudi se milke aava ❤️... fir papa jaldi thik hoke aayengw tere pass.. or ab overthinking band just smile .. or tu akela ni h smjha phle ye.. mein hun idhar hmesha smjhaa...tu udas mt ho tu jb udas hoti tb bandriya lgti h😅 .. imean achi ni lgti h isiliye just smile hna betuu❤️. or haa kuch bhi ho sabse phle mujhe call krna .. i know me smbhal  lunga tujhe but ni smbhal paya yo sath me ro lenge lekin.. koi bhi kaam tujhe akele ni krne ni dunga smjhaa... ❤️
+    i love you so much ..❤️❤️. 
+    apna dhyaan rakh... mein hun idhar hmesha kabhi bhi call krlena hna 
+    tu strong h meri betu❤️❤️ <br>
+    Chahe duniya tumhare khilaaf ho, main tumhare saath khada hoon..<br>
+      >
+        aur main chahta hoon ki tum kabhi akeli feel na karo. 💖</p>
+    <button onclick="goToPage3()">Next</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div id="page3" class="page">
+    <h2>Special Video 🎥</h2>
+    <video controls autoplay muted>
+      <source src="butkii.mp4" type="video/mp4">
+      Your browser doesn't support the video tag.
+    </video>
+  </div>
+
+  <script>
+    function playAndGoTo2() {
+      const audio = document.getElementById('bgMusic');
+      audio.play().catch(err => console.log("Autoplay unblocked:", err));
+      showPage(2);
+    }
+
+    function goToPage3() {
+      showPage(3);
+    }
+
+    function showPage(num) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + num).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
